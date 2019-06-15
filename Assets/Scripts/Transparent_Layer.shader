@@ -97,8 +97,8 @@
 					float4 col = 0;                                                              // 這是顯示 shader texture 的參數，0會全黑
 					float3 drops = Layer(i.uv, t);
 					drops += Layer(i.uv*1.23 + 7.54, t);
-					drops += Layer(i.uv*1.35 * 3 + 1.54, t);
-					drops += Layer(i.uv*1.57 * 2 - 7.54, t);
+					// drops += Layer(i.uv*1.35 * 3 + 1.54, t);
+					// drops += Layer(i.uv*1.57 * 2 - 7.54, t);
 					float fade = 1 - saturate(fwidth(i.uv) * 50);
 					float blur = _Blur * 7 * (1 - drops.z+fade);                                      // 加霧面感 (乘上 fogtrail，添增尾跡)
 					// col = tex2Dlod(_MainTex, float4(i.uv + drops.xy * _Distortion,0, blur));  // distortion 是雨滴折射圖片
